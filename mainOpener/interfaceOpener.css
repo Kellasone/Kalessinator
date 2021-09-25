@@ -1,0 +1,21 @@
+#wrapper{
+    width:50px;
+    height:50px;
+    background-image: url("chrome-extension://__MSG_@@extension_id__/mainOpener/images/openerBackground.png");
+    background-size: 100% 100%;
+    background-position: center;
+    position:fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+#innerImage{
+    width: 40px;
+    height: 40px;
+    background-image: url("chrome-extension://__MSG_@@extension_id__/mainOpener/images/innerImage.png");
+    background-size: 100% 100%;
+    margin-top: 5px;
+    margin-left: 5px;
+    position:absolute;
+}

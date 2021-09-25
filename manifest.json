@@ -1,0 +1,26 @@
+{
+  "name": "Kalessinator",
+  "description": "Small addon to kalessinate the FOE game.",
+  "version": "0.0.1",
+  "manifest_version":3,
+
+  "background": {
+    "service_worker":"./inject.js"
+  },
+  "permissions": [
+    "scripting",
+    "tabs",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "web_accessible_resources": [{
+    "resources": [
+      "/mainOpener/images/*.png",
+      "/mainWindow/images/*.png",
+      "/mainWindow/images/tabs/*.png"
+    ],
+    "matches": ["<all_urls>"]
+  }]
+}
