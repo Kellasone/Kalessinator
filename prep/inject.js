@@ -10,10 +10,13 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
             chrome.scripting.executeScript({
                 target: {tabId: tabId},
                 files: [
+                    "./prep/init.js",
+                    "./prep/objects.js",
                     "./mainOpener/interfaceOpener.js",
                     "./mainWindow/mainWindow.js",
-                    "./preparationScript/init.js",
-                    "./neighbours.js"
+                    "./commonMethods/gameSpecific.js",
+                    "./commonMethods/neighboursSpecific.js",
+                    "./commonMethods/playerSpecific.js"
                 ]
             })
                 .then(() => console.log("Injected!"))

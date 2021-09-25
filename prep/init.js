@@ -1,10 +1,4 @@
-const kalessinator_variables = {
-    "secret": null,
-    "version": null,
-    "requiredVersion": null,
-    "userKey": null,
-    "requestId": 1
-}
+//Code that should run when the game loads. This script ensure the proper data to make requests to the server.
 
 document.addEventListener('DOMContentLoaded',__init__(),false);
 
@@ -13,9 +7,7 @@ function __init__() {
         var scripts = document.getElementsByTagName('script');
 
         var secretXHR = new XMLHttpRequest();
-
         secretXHR.open("GET", scripts[scripts.length - 1].src, true);
-
         secretXHR.onreadystatechange = async function () {
             if (this.readyState == 4 && this.status == 200) {
                 kalessinator_variables.secret = secretXHR.responseText.split("VERSION_SECRET=\"")[1].split("\";")[0];
@@ -28,51 +20,12 @@ function __init__() {
                 }
                 chrome.storage.local.set({'kalessinator_variables' :kalessinator_variables});
             }
-
         }
         secretXHR.send();
     }, 5000);
-
 }
 
-function FoeSendRequestAsync(rq, timeout = 400) {
-    return new Promise(resolve => setTimeout(resolve, timeout)).then(async () => {
-        return FoeSendRequestPromise(rq);
-    });
-}
-
-function FoeSendRequestPromise(body) {
-    return new Promise(async function (resolve, reject) {
-
-        body[0]["requestId"] = kalessinator_variables.requestId;
-
-        var xhr = new XMLHttpRequest();
-
-        xhr.open('POST', `/game/json?h=${kalessinator_variables.userKey}`, true);
-        xhr.setRequestHeader('Client-Identification', `version=${kalessinator_variables.version}; requiredVersion=${kalessinator_variables.requiredVersion}; platform=bro; platformType=html5; platformVersion=web`);
-        xhr.setRequestHeader('Signature', Signature(kalessinator_variables.userKey, kalessinator_variables.secret, body));
-        xhr.setRequestHeader('Content-Type', 'application/json');
-
-        xhr.onload = function () {
-            if (this.status >= 200 && this.status < 300) {
-                resolve(JSON.parse(xhr.response));
-            } else {
-                reject({
-                    status: this.status,
-                    statusText: xhr.statusText
-                });
-            }
-        };
-        xhr.onerror = function () {
-            reject({
-                status: this.status,
-                statusText: xhr.statusText
-            });
-        };
-        xhr.send(JSON.stringify(body));
-        kalessinator_variables.requestId++;
-    });
-}
+//Following methods are from the actual game script.
 
 function Signature(userKey, secret, body) {
     var data = userKey + secret + JSON.stringify(body);
