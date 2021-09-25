@@ -1,5 +1,6 @@
 const windowDiv = document.createElement('div');
 windowDiv.classList.add('mainWindow');
+windowDiv.classList.add('game-cursor');
 // windowDiv.style.setProperty('visibility', 'hidden');
 windowDiv.style.setProperty('visibility', 'visible');
 
@@ -22,7 +23,16 @@ bottom.id = 'windowBottom';
 const tabsHeader = document.createElement('div');
 tabsHeader.id = 'tabsHeader'
 
-const tabs = ['attack', 'settings'];
+const tabs = ['attack'];
+
+function changeSelectedTab(tabName) {
+    const tabs = document.getElementById('tabsHeader').children;
+    for (const tabElement of tabs) {
+        tabElement.id = '';
+    }
+    var tab = document.getElementById(tabName).parentElement;
+    tab.id = 'tabSelected';
+}
 
 function createMenuContent(tabName) {
     var bodyContent = document.getElementById('bodyContent');
@@ -33,12 +43,11 @@ function createMenuContent(tabName) {
 
     switch (tabName){
         case 'attack' :
-            var title = document.createElement('h2');
-            title.innerText = 'Attack Menu'
-            title.style.textAlign = 'center';
-            menuContent.appendChild(title);
+            changeSelectedTab('attack');
+            createAttackMenu(menuContent);
             break;
         case 'settings' :
+            changeSelectedTab('settings');
             var title = document.createElement('h2');
             title.innerText = 'Settings menu';
             title.style.textAlign = 'center';
@@ -57,11 +66,6 @@ tabs.forEach((tabName) => {
 
     tab.appendChild(image);
     tab.addEventListener('click', () => {
-        const tabs = document.getElementById('tabsHeader').children;
-        for(const tabElement of tabs) {
-            tabElement.id ='';
-        }
-        tab.id = 'tabSelected';
         createMenuContent(tabName);
     })
     tabsHeader.appendChild(tab);

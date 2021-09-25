@@ -104,3 +104,19 @@
     height: auto;
     min-height: 30px;
 }
+
+.buttonClass {
+    min-width: 100px;
+    width: fit-content;
+    height: 30px;
+    background: linear-gradient(to bottom, rgb(183,112,55) 0%,rgb(176,96,38) 1%,rgb(145,72,30) 30%,rgb(130,62,24) 99%,rgb(176,104,50) 100%);
+    line-height: 30px;
+    vertical-align: middle;
+    border-radius: 8px;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.buttonClass:hover{
+    background: linear-gradient(to bottom, rgb(245, 205, 72) 0%,rgb(223, 154, 52) 1%,rgb(186, 99, 32) 30%,rgb(146, 71, 21) 99%,rgb(163, 93, 40) 100%);
+}
