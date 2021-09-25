@@ -3,9 +3,8 @@
   "description": "Small addon to kalessinate the FOE game.",
   "version": "0.0.1",
   "manifest_version":3,
-
   "background": {
-    "service_worker":"./inject.js"
+    "service_worker":"./prep/inject.js"
   },
   "permissions": [
     "scripting",
