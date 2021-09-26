@@ -10,8 +10,17 @@ const bottom = document.createElement('div');
 
 const name = document.createElement('span');
 name.innerText = 'Kalessinator';
+name.style.userSelect = 'none';
 name.id = 'name';
 topBar.appendChild(name);
+
+const closeButton = document.createElement('div');
+closeButton.id = 'close-button';
+closeButton.addEventListener('click', () =>{
+    document.getElementsByClassName('mainWindow')[0].style.visibility = 'hidden';
+})
+
+topBar.appendChild(closeButton);
 
 const bodyContent = document.createElement("div")
 bodyContent.id = 'bodyContent';
@@ -83,9 +92,9 @@ document.querySelector('body').appendChild(windowDiv);
 
 createMenuContent('attack');
 
-dragElement(windowDiv);
+dragElement(windowDiv, topBar);
 
-function dragElement(window) {
+function dragElement(window, topBar) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     if (topBar) {
         topBar.onmousedown = dragMouseDown;

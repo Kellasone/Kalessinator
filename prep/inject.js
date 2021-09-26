@@ -4,12 +4,14 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
             target: {tabId: tabId},
             files: [
                 "./mainOpener/interfaceOpener.css",
-                "./mainWindow/mainWindow.css"
+                "./mainWindow/mainWindow.css",
+                "./neighboursResultWindow/neighboursResultWindow.css"
             ]
         }).then(() => {
             chrome.scripting.executeScript({
                 target: {tabId: tabId},
                 files: [
+                    "./neighboursResultWindow/neighboursResultWindow.js",
                     "./attackMenu/attackMenu.js",
                     "./prep/init.js",
                     "./prep/objects.js",

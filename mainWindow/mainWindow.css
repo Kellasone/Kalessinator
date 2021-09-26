@@ -87,16 +87,10 @@
     transform: translate(-50%, -50%);
 }
 
-/*#tmp {*/
-/*    height: 400px;*/
-/*    width: 100%;*/
-/*    background-color: red;*/
-
-/*}*/
-
 #bodyContent > div:nth-child(2) {
     height: 400px;
     width: 100%;
+    margin-top:-15px;
 }
 
 #tabsHeader {
@@ -119,4 +113,15 @@
 
 .buttonClass:hover{
     background: linear-gradient(to bottom, rgb(245, 205, 72) 0%,rgb(223, 154, 52) 1%,rgb(186, 99, 32) 30%,rgb(146, 71, 21) 99%,rgb(163, 93, 40) 100%);
+}
+
+#close-button {
+    float: right;
+    background-color: rgb(119,42,29);
+    width: 20px;
+    height: 20px;
+    z-index: 1000;
+    margin-top:15px;
+    margin-right: 17px;
+    border-radius: 5px;
 }

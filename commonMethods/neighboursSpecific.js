@@ -49,21 +49,29 @@ async function attackNeighbours() {
             "requestMethod": "startByBattleType"
         }];
 
+        let testEntry = document.createElement('div');
+        testEntry.classList.add('attack-result');
+        testEntry.innerText = `Would attack ${neighbour.name} !`;
+
         await NewAttackArmy();
 
         var response  = await FoeSendRequestAsync(request,0);
+        console.log(response);
 
         var index = findMethodJson(response,"startByBattleType");
         var log = 'Attacked ' + neighbour.name + ' and ';
-        if(response[index]['responseData']['__class__'] === 'Error'){
-            console.log('Error attacking ' + neighbour.name + "!");
+        if(response[0]['__class__'] === 'Error' || response[index]['responseData']['__class__'] === 'Error'){
+            testEntry.innerText = 'Error attacking ' + neighbour.name + "!";
         }
         else {
             if(response[index]['responseData']['state']['winnerBit'] == 1)
-                console.log(log + 'won!');
+                testEntry.innerText = log + 'won!';
             else
-                console.log(log + 'lost!');
+                testEntry.innerText = log + 'lost!';
         }
+        let content = document.getElementsByClassName('window-body-content')[0];
+        content.appendChild(testEntry)
+
     }
 }
 

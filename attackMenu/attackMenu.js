@@ -1,6 +1,7 @@
 function createAttackMenu(menuContent) {
     var title = document.createElement('h2');
     title.innerText = 'Attack Menu'
+    title.style.userSelect = 'none';
     title.style.textAlign = 'center';
     menuContent.appendChild(title);
 
@@ -9,9 +10,11 @@ function createAttackMenu(menuContent) {
     attackNeighboursButton.style.userSelect = 'none';
     attackNeighboursButton.innerText = 'Attack Neighbours';
 
-    attackNeighboursButton.addEventListener('click',() => {
-        attackNeighbours()
-            .then();
-    })
+    attackNeighboursButton.addEventListener('click',async () => {
+
+        createResultWindow();
+        await attackNeighbours();
+
+    });
     menuContent.appendChild(attackNeighboursButton);
 }
