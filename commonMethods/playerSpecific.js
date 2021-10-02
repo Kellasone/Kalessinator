@@ -14,7 +14,7 @@ async function getCurrentUserId() {
 }
 
 async function NewAttackArmy(e, type = "") {
-    var armyVar = ['legionnaire', 'rogue', 'rogue', 'rogue', 'rogue', 'rogue', 'rogue', 'rogue']
+    var armyVar = ['power_dragon', 'rogue', 'rogue', 'rogue', 'rogue', 'rogue', 'rogue', 'rogue']
 
     var armyIds = [];
     var armyIds_defending = [];

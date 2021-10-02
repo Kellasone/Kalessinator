@@ -15,6 +15,12 @@ function createAttackMenu(menuContent) {
         createResultWindow();
         await attackNeighbours();
 
+        // let testDiv = document.createElement('div');
+        // testDiv.id = 'test-div';
+        // testDiv.innerText = 'some text';
+        // document.querySelector('body').appendChild(testDiv);
+
+
     });
     menuContent.appendChild(attackNeighboursButton);
 }
