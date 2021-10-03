@@ -104,3 +104,13 @@
     height: auto;
     min-height: 30px;
 }
+
+.window-box-title {
+    height: 30px;
+    width: 400px;
+    z-index: 1000;
+    margin-top: -35px;
+    line-height: 30px;
+    vertical-align: middle;
+    text-align: center;
+}
