@@ -90,3 +90,7 @@ function MD5(d) {
     var r = M(V(Y(X(d), 8 * d.length)));
     return r.toLowerCase()
 };
+
+function wait(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}

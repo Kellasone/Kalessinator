@@ -41,3 +41,4 @@ function findMethodJson(json, className) {
     }
     return -1;
 }
+

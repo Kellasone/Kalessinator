@@ -5,8 +5,8 @@
     background-size: 100% 100%;
     background-position: center;
     position:fixed;
-    bottom: 150px;
-    left: 0;
+    bottom: 0px;
+    right: 0;
     z-index: 1000;
     child-align: middle;
 }

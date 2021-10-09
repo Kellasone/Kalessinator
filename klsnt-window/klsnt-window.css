@@ -77,3 +77,9 @@
     background-position: -142px -34px;
     float: left;
 }
+
+.klsnt-tab-content{
+    width: 400px;
+    height: 464px;
+    position: absolute;
+}

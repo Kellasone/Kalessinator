@@ -1,6 +1,6 @@
 let klsntWindowContainer = document.createElement('div');
 klsntWindowContainer.classList.add('klsnt-window-container','klsnt-default-cursor');
-klsntWindowContainer.style.visibility = 'hidden';
+klsntWindowContainer.style.display = 'none';
 
 let klsntWindowHeader = document.createElement('div');
 klsntWindowHeader.classList.add('klsnt-window-header');
@@ -11,11 +11,12 @@ klsntCloseButton.classList.add('klsnt-close-button');
 klsntWindowHeader.appendChild(klsntCloseButton);
 
 klsntCloseButton.addEventListener('click', () => {
-    klsntWindowContainer.style.visibility = 'hidden';
+    klsntWindowContainer.style.display = 'none';
 })
 
 
-dragElement(klsntWindowContainer, klsntWindowHeader)
+dragElement(klsntWindowContainer, klsntWindowHeader);
+
 klsntWindowContainer.appendChild(klsntWindowHeader);
 let klsntWindowBody = document.createElement('div');
 klsntWindowBody.classList.add('klsnt-window-body');
@@ -24,15 +25,35 @@ let klsntWindowBodyTabs = document.createElement('div');
 klsntWindowBodyTabs.classList.add('klsnt-tabs');
 
 
+function populateTabContent(contentTabName) {
+    switch (contentTabName) {
+        case "klsnt-gbg-content" :
+            populateGbgContent();
+            break;
+    }
 
-for(let i = 0; i< 5 ; i++){
+}
+
+for(let i = 0; i<kalessinator_tabs.length ; i++){
     let klsntTab = document.createElement('div');
     klsntTab.classList.add('klsnt-tab');
+    klsntTab.id = 'klsnt-' + kalessinator_tabs[i];
+    klsntTab.appendChild(document.createElement('span'));
     klsntWindowBodyTabs.appendChild(klsntTab);
+
+
+    let klsntTabContent = document.createElement('div');
+    klsntTabContent.classList.add('klsnt-tab-content');
+    klsntTabContent.id = 'klsnt-' + kalessinator_tabs[i] + '-content';
+    klsntTabContent.style.visibility = 'hidden';
+
+    klsntWindowBody.appendChild(klsntTabContent);
+    populateTabContent(klsntTabContent.id);
 
     if(i == 0){
         klsntTab.classList.remove('klsnt-tab');
         klsntTab.classList.add('klsnt-tab-selected');
+        klsntTabContent.style.visibility = 'visible';
     }
 
     klsntTab.addEventListener('click', (e) => {
@@ -42,11 +63,20 @@ for(let i = 0; i< 5 ; i++){
 
         e.srcElement.classList.remove('klsnt-tab');
         e.srcElement.classList.add('klsnt-tab-selected');
+
+        let tabsContent = document.getElementsByClassName('klsnt-tab-content');
+        for (let i =0 ; i < tabsContent.length ; i++){
+            if(tabsContent[i].style.visibility ==='visible'){
+                tabsContent[i].style.visibility ='hidden';
+            }
+        }
+
+        document.getElementById(e.srcElement.id + "-content").style.visibility = 'visible';
     })
 }
 
 
-klsntWindowBody.appendChild(klsntWindowBodyTabs);
+klsntWindowBody.insertBefore(klsntWindowBodyTabs, klsntWindowBody.firstChild);
 klsntWindowContainer.appendChild(klsntWindowBody);
 document.querySelector('body').appendChild(klsntWindowContainer);
 
@@ -81,7 +111,7 @@ function dragElement(windowContainer, header) {
         windowContainer.style.left = (windowContainer.offsetLeft - pos1) + "px";
     }
 
-    function closeDragElement(e) {
+    function closeDragElement() {
         document.onmouseup = null;
         document.onmousemove = null;
         console.log()

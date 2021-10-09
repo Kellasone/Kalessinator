@@ -7,10 +7,11 @@ async function getCurrentUserId() {
     if(index!=-1) {
         let players = response[index]["responseData"];
         for (let i = 0; i < players.length; i++) {
-            if(players[i]["is_self"] == true) return players[i];
+            if(players[i]["is_self"] == true) {
+                return players[i];
+            }
         }
     }
-    else consoleLog("Error finding method!");
 }
 
 async function NewAttackArmy(e, type = "") {
