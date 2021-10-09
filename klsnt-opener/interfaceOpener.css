@@ -1,0 +1,26 @@
+#wrapper{
+    width:225px;
+    height:50px;
+    background-image: url("chrome-extension://__MSG_@@extension_id__/klsnt-opener/images/openerBackground.png");
+    background-size: 100% 100%;
+    background-position: center;
+    position:fixed;
+    bottom: 150px;
+    left: 0;
+    z-index: 1000;
+    child-align: middle;
+}
+
+#wrapper:hover {
+    filter: brightness(150%);
+}
+
+#innerImage{
+    width: 130px;
+    height: 50px;
+    background-image: url("chrome-extension://__MSG_@@extension_id__/klsnt-opener/images/innerImage.png");
+    background-size: 100% 100%;
+    margin-top:2px;
+    margin-left: 47px;
+    position:absolute;
+}

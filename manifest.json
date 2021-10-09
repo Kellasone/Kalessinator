@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "manifest_version":3,
   "background": {
-    "service_worker":"./prep/inject.js"
+    "service_worker":"./klsnt-init/inject.js"
   },
   "permissions": [
     "scripting",
@@ -16,9 +16,9 @@
   ],
   "web_accessible_resources": [{
     "resources": [
-      "/mainOpener/images/*.png",
-      "/mainWindow/images/*.png",
-      "/mainWindow/images/tabs/*.png"
+      "/klsnt-common/style/images/cursor/*.png",
+      "/klsnt-opener/images/*.png",
+      "/klsnt-window/images/*.png"
     ],
     "matches": ["<all_urls>"]
   }]
