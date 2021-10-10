@@ -12,6 +12,7 @@
     width: 400px;
     height: 500px;
     z-index: 1000;
+    color: rgb(246,212,164);
 }
 
 .klsnt-window-header {
@@ -79,7 +80,36 @@
 }
 
 .klsnt-tab-content{
+    padding-top: 4px;
     width: 400px;
     height: 464px;
     position: absolute;
+}
+
+.klsnt-tab span, .klsnt-tab-selected span {
+    z-index: 1000;
+    margin-left: -2px;
+    margin-top: 2px;
+    min-width: 34px;
+    min-height: 34px;
+    display: inline-block;
+    pointer-events: none;
+}
+
+.klsnt-button {
+    background: linear-gradient(to bottom, rgb(183,112,55) 0%,rgb(176,96,38) 1%,rgb(145,72,30) 30%,rgb(130,62,24) 99%,rgb(176,104,50) 100%);
+    border: black 1px solid;
+    border-radius: 2px;
+    height: 21px;
+    width: fit-content;
+    padding: 0px 5px;
+    user-select: none;
+}
+
+.klsnt-button:hover {
+    background: linear-gradient(to bottom, rgb(245, 205, 72) 0%,rgb(223, 154, 52) 1%,rgb(186, 99, 32) 30%,rgb(146, 71, 21) 99%,rgb(163, 93, 40) 100%);
+}
+
+.klsnt-button:active {
+    background: linear-gradient(to bottom, rgb(121, 19, 38) 0%,rgb(129, 38, 24) 1%,rgb(104, 45, 28) 30%,rgb(114, 53, 27) 99%,rgb(189, 115, 60) 100%);
 }

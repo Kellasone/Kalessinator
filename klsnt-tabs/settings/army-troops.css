@@ -1,0 +1,11 @@
+#klsnt-army-slot-empty {
+    background: url("chrome-extension://__MSG_@@extension_id__/klsnt-tabs/settings/images/empty.png") center no-repeat;
+}
+
+#klsnt-army-slot-energy_dragon {
+    background: url("chrome-extension://__MSG_@@extension_id__/klsnt-tabs/settings/images/energy_dragon.png") center no-repeat;
+}
+
+#klsnt-army-slot-rogue {
+    background: url("chrome-extension://__MSG_@@extension_id__/klsnt-tabs/settings/images/rogue.png") center no-repeat;
+}

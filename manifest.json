@@ -22,6 +22,7 @@
       "/klsnt-common/style/images/cursor/*.png",
       "/klsnt-opener/images/*.png",
       "/klsnt-tabs/gbg/images/*.png",
+      "/klsnt-tabs/settings/images/*.png",
       "/klsnt-window/images/*.png"
     ],
     "matches": ["<all_urls>"]

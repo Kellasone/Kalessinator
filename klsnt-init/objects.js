@@ -6,7 +6,7 @@ const kalessinator_variables = {
     "requestId": 1
 };
 
-const kalessinator_tabs = ['gbg'];
+const kalessinator_tabs = ['gbg','settings'];
 
 const allowed_players = [
     'Mereu B Niciodata M',

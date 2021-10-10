@@ -1,6 +1,14 @@
 let klsntWindowContainer = document.createElement('div');
 klsntWindowContainer.classList.add('klsnt-window-container','klsnt-default-cursor');
+klsntWindowContainer.id='klsnt-main-window';
 klsntWindowContainer.style.display = 'none';
+
+let windowTop = localStorage.getItem('klsnt-' +klsntWindowContainer.id + '-top');
+let windowLeft = localStorage.getItem('klsnt-'+klsntWindowContainer.id+ '-left');
+if(windowTop && windowLeft) {
+    klsntWindowContainer.style.top = windowTop;
+    klsntWindowContainer.style.left = windowLeft;
+}
 
 let klsntWindowHeader = document.createElement('div');
 klsntWindowHeader.classList.add('klsnt-window-header');
@@ -29,6 +37,9 @@ function populateTabContent(contentTabName) {
     switch (contentTabName) {
         case "klsnt-gbg-content" :
             populateGbgContent();
+            break;
+        case "klsnt-settings-content" :
+            populateSettingsContent();
             break;
     }
 
@@ -114,7 +125,8 @@ function dragElement(windowContainer, header) {
     function closeDragElement() {
         document.onmouseup = null;
         document.onmousemove = null;
-        console.log()
         header.classList.remove('klsnt-drag-cursor');
+        localStorage.setItem('klsnt-' + windowContainer.id +'-top', windowContainer.style.top);
+        localStorage.setItem('klsnt-' + windowContainer.id + '-left', windowContainer.style.left);
     }
 }
