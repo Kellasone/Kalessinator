@@ -30,3 +30,10 @@
     display: inline-block;
     pointer-events: none;
 }
+
+.klsnt-change-army-content {
+    margin-top: 10px;
+    padding-top: 2px;
+    width: 400px;
+    height: 200px;
+}

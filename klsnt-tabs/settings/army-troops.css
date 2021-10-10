@@ -2,10 +2,26 @@
     background: url("chrome-extension://__MSG_@@extension_id__/klsnt-tabs/settings/images/empty.png") center no-repeat;
 }
 
-#klsnt-army-slot-energy_dragon {
-    background: url("chrome-extension://__MSG_@@extension_id__/klsnt-tabs/settings/images/energy_dragon.png") center no-repeat;
+#klsnt-army-slot-power_dragon {
+    background: url("chrome-extension://__MSG_@@extension_id__/klsnt-tabs/settings/images/power_dragon.png") center no-repeat;
 }
 
 #klsnt-army-slot-rogue {
     background: url("chrome-extension://__MSG_@@extension_id__/klsnt-tabs/settings/images/rogue.png") center no-repeat;
+}
+#klsnt-army-slot-SpaceAgeVenus_champion {
+    background: url("chrome-extension://__MSG_@@extension_id__/klsnt-tabs/settings/images/SpaceAgeVenus_champion.png") center no-repeat;
+}
+
+#klsnt-army-slot-observer_drone {
+    background: url("chrome-extension://__MSG_@@extension_id__/klsnt-tabs/settings/images/observer_drone.png") center no-repeat;
+}
+#klsnt-army-slot-steel_fist {
+    background: url("chrome-extension://__MSG_@@extension_id__/klsnt-tabs/settings/images/steel_fist.png") center no-repeat;
+}
+#klsnt-army-slot-energy_cannon {
+    background: url("chrome-extension://__MSG_@@extension_id__/klsnt-tabs/settings/images/energy_cannon.png") center no-repeat;
+}
+#klsnt-army-slot-ghost_blaster {
+    background: url("chrome-extension://__MSG_@@extension_id__/klsnt-tabs/settings/images/ghost_blaster.png") center no-repeat;
 }
