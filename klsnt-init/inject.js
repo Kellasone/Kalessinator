@@ -17,6 +17,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
                     "./klsnt-init/objects.js",
                     "./klsnt-init/init.js",
                     "./klsnt-tabs/gbg/gbg.js",
+                    "./klsnt-change-army/change-army.js",
                     "./klsnt-tabs/settings/settings.js",
                     "./klsnt-window/klsnt-window.js",
                     "./klsnt-opener/interfaceOpener.js",
