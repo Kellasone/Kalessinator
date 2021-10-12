@@ -23,7 +23,8 @@
       "/klsnt-opener/images/*.png",
       "/klsnt-tabs/gbg/images/*.png",
       "/klsnt-tabs/settings/images/*.png",
-      "/klsnt-window/images/*.png"
+      "/klsnt-window/images/*.png",
+      "/klsnt-army-setup/images/*.png"
     ],
     "matches": ["<all_urls>"]
   }]

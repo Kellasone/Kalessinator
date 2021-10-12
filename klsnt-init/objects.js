@@ -23,6 +23,6 @@ const troops = {
     "saab": {
         "id":"saab",
         "description":"Space Age Asteroid Belt",
-        "units":[]
+        "units": ["hover_hammer","drill_ranger","shredder","nail_storm","belt","SpaceAgeAsteroidBelt_champion"]
     }
 }

@@ -1,51 +1,12 @@
-function transformArmy(armyContainer) {
-    let army = [];
-    for (let i = 0; i < 8; i++) {
-        let troop = armyContainer.children[i].children[0].id.slice(16);
-        army.push(troop);
-    }
-    return army;
-}
-
-function repopulateGBGArmySlot(currentArmy, elementId) {
-    for (let i = 0; i < 8; i++) {
-        document.getElementById(elementId + '-slot_' + i).firstChild.remove();
-    }
-    populateGBGArmySlot(currentArmy, elementId)
-}
-
-function sortArmy(currentArmy) {
-    for (let i = currentArmy.length-2; i > -1; i--) {
-        if((currentArmy[i] ==='empty') && (currentArmy[i+1] !=='empty')) {
-            currentArmy.push(currentArmy[i])
-            currentArmy.splice(i,1);
-            i++;
-        }
-    }
-    return currentArmy;
-}
-
-function insertUnit(unit, selectedArmy) {
-    let i = 0;
-    while(selectedArmy[i] !=='empty' && i<selectedArmy.length){
-        i++;
-    }
-
-    if (i<selectedArmy.length){
-        selectedArmy[i] = unit;
-    }
-    return selectedArmy;
-}
-
-function createChangeArmyWindow() {
+function createChangeArmyWindow(windowId = 'klsnt-change-army-window') {
     let newWindow = document.createElement('div');
     newWindow.classList.add('klsnt-window-container')
-    newWindow.id = 'klsnt-change-army-window';
+    newWindow.id = windowId;
     newWindow.style.width = '400px';
     newWindow.style.height = '200px';
 
-    let windowTop = localStorage.getItem('klsnt-' + newWindow.id + '-top');
-    let windowLeft = localStorage.getItem('klsnt-' + newWindow.id + '-left');
+    let windowTop = localStorage.getItem('klsnt-' + windowId + '-top');
+    let windowLeft = localStorage.getItem('klsnt-' + windowId + '-left');
 
     if (windowTop && windowLeft) {
         newWindow.style.top = windowTop;
@@ -102,6 +63,11 @@ function createChangeArmyWindow() {
         dropdownErasMenu.appendChild(erasOption);
     }
 
+    if(localStorage.getItem('armySelectOption')){
+        dropdownErasMenu.selectedIndex = localStorage.getItem('armySelectOption');
+    }
+
+
     const saveButton = document.createElement('div');
     saveButton.classList.add('klsnt-button');
     saveButton.innerText="Save army";
@@ -110,7 +76,7 @@ function createChangeArmyWindow() {
         let army = transformArmy(document.getElementById("klsnt-change-army-current"));
         localStorage.setItem('gbgArmy', JSON.stringify(army));
         repopulateGBGArmySlot(army,'klsnt-army');
-        document.getElementById('klsnt-change-army-window').remove();
+        document.getElementById(windowId).remove();
     })
 
     windowContent.appendChild(dropdownErasMenu);
@@ -150,11 +116,62 @@ function createChangeArmyWindow() {
         populateGBGArmySlot(['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], 'klsnt-change-army')
     }
 
-    let units = troops["sav"]["units"];
+    prepopulateSelectArmy(dropdownErasMenu.selectedOptions[0].value);
+
+    dropdownErasMenu.addEventListener('change', () => {
+        let testName = troops[dropdownErasMenu.selectedOptions[0].value]['units'].slice();
+        testName.push('rogue');
+        repopulateGBGArmySlot(testName, "klsnt-change-army-select");
+        localStorage.setItem('armySelectOption', dropdownErasMenu.selectedIndex);
+    });
+
+
+}
+
+function transformArmy(armyContainer) {
+    let army = [];
+    for (let i = 0; i < 8; i++) {
+        let troop = armyContainer.children[i].children[0].id.slice(16);
+        army.push(troop);
+    }
+    return army;
+}
+
+function repopulateGBGArmySlot(currentArmy, elementId) {
+    for (let i = 0; i < currentArmy.length; i++) {
+        document.getElementById(elementId + '-slot_' + i).firstChild.remove();
+    }
+    populateGBGArmySlot(currentArmy, elementId)
+}
+
+function sortArmy(currentArmy) {
+
+    for (let i = currentArmy.length-2; i > -1; i--) {
+        if((currentArmy[i] ==='empty') && (currentArmy[i+1] !=='empty')) {
+            currentArmy.push(currentArmy[i])
+            currentArmy.splice(i,1);
+            i++;
+        }
+    }
+    return currentArmy;
+}
+
+function insertUnit(unit, selectedArmy) {
+    let i = 0;
+    while(selectedArmy[i] !=='empty' && i<selectedArmy.length){
+        i++;
+    }
+
+    if (i<selectedArmy.length){
+        selectedArmy[i] = unit;
+    }
+    return selectedArmy;
+}
+
+function prepopulateSelectArmy(era) {
+    let units = troops[era]["units"].slice();
     units.push('rogue');
     populateGBGArmySlot(units, "klsnt-change-army-select");
-
-
 }
 
 async function populateSettingsContent() {

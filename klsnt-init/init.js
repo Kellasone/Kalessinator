@@ -3,6 +3,7 @@
 document.addEventListener('DOMContentLoaded',__init__(),false);
 
 function __init__() {
+    addStylesheetRules();
     setTimeout(() => {
         var scripts = document.getElementsByTagName('script');
 

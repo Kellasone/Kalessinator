@@ -6,7 +6,6 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
                 "./klsnt-common/style/css/klsnt-cursor.css",
                 "./klsnt-tabs/gbg/gbg.css",
                 "./klsnt-tabs/settings/settings.css",
-                "./klsnt-tabs/settings/army-troops.css",
                 "./klsnt-opener/interfaceOpener.css",
                 "./klsnt-window/klsnt-window.css"
             ]
@@ -14,8 +13,9 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
             chrome.scripting.executeScript({
                 target: {tabId: tabId},
                 files: [
-                    "./klsnt-init/init.js",
+                    "./klsnt-army-setup/createArmyStyle.js",
                     "./klsnt-init/objects.js",
+                    "./klsnt-init/init.js",
                     "./klsnt-tabs/gbg/gbg.js",
                     "./klsnt-tabs/settings/settings.js",
                     "./klsnt-window/klsnt-window.js",
