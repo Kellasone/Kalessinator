@@ -7,7 +7,7 @@ function FoeSendRequestAsync(rq, timeout = 400) {
 function FoeSendRequestPromise(body) {
     return new Promise(async function (resolve, reject) {
         body[0]["requestId"] = kalessinator_variables.requestId;
-        var xhr = new XMLHttpRequest();
+        const xhr = new XMLHttpRequest();
 
         xhr.open('POST', `/game/json?h=${kalessinator_variables.userKey}`, true);
         xhr.setRequestHeader('Client-Identification', `version=${kalessinator_variables.version}; requiredVersion=${kalessinator_variables.requiredVersion}; platform=bro; platformType=html5; platformVersion=web`);
@@ -36,7 +36,7 @@ function FoeSendRequestPromise(body) {
 }
 
 function findMethodJson(json, className) {
-    for (var i = 0; i < json.length; i++) {
+    for (let i = 0; i < json.length; i++) {
         if (json[i]["requestMethod"] == className) return i;
     }
     return -1;

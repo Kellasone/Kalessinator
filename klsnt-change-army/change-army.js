@@ -1,28 +1,8 @@
 function createChangeArmyWindow(windowId, height , width , windowName) {
     let newWindow = createWindow(windowId, width, height, windowName);
-    createContent(newWindow);
+    createContentChangeArmy(newWindow);
 }
 
-function createWindow(windowId, width, height, windowName) {
-    let newWindow = document.createElement('div');
-    newWindow.classList.add('klsnt-window-container')
-    newWindow.id = windowId;
-    newWindow.style.width = width;
-    newWindow.style.height = height;
-
-    let windowTop = localStorage.getItem('klsnt-' + windowId + '-top');
-    let windowLeft = localStorage.getItem('klsnt-' + windowId + '-left');
-
-    if (windowTop && windowLeft) {
-        newWindow.style.top = windowTop;
-        newWindow.style.left = windowLeft;
-    }
-    let windowHeader = addWindowHeader(windowName);
-    addCloseButton(windowHeader, newWindow);
-    newWindow.appendChild(windowHeader);
-    dragElement(newWindow, windowHeader);
-    return newWindow;
-}
 function addWindowHeader(windowName) {
     let windowHeader = document.createElement('div');
     windowHeader.classList.add("klsnt-window-header");
@@ -38,7 +18,7 @@ function addCloseButton(windowHeader, newWindow) {
     })
 }
 
-function createContent(newWindow) {
+function createContentChangeArmy(newWindow) {
     let windowId = newWindow.id;
     let windowContent;
     let dropdownErasMenu;
@@ -104,7 +84,7 @@ function addDropdownMenu(windowContent) {
         let testName = troops[dropdownErasMenu.selectedOptions[0].value]['units'].slice();
         testName.push('rogue');
         repopulateGBGArmySlot(testName, "klsnt-change-army-select");
-        localStorage.setItem('armySelectOption', dropdownErasMenu.selectedIndex);
+        localStorage.setItem('armySelectOption', JSON.stringify(dropdownErasMenu.selectedIndex));
     });
 
     return dropdownErasMenu;

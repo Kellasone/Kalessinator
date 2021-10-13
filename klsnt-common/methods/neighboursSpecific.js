@@ -1,16 +1,16 @@
 async function getNeighborList() {
-    var request = [{
+    const request = [{
         "__class__": "ServerRequest",
         "requestData": [],
         "requestClass": "OtherPlayerService",
         "requestMethod": "getNeighborList"
     }];
 
-    var response = await FoeSendRequestAsync(request, 0);
+    const response = await FoeSendRequestAsync(request, 0);
 
-    var index = findMethodJson(response, "getNeighborList");
+    const index = findMethodJson(response, "getNeighborList");
     if (index != -1) {
-        var neighbors = response[index]["responseData"];
+        const neighbors = response[index]["responseData"];
         for (let i = 0; i < neighbors.length; i++) {
             if (neighbors[i]['next_interaction_in'] != null ||
                 neighbors[i]['is_friend'] == true ||
@@ -31,10 +31,10 @@ async function getNeighborList() {
 
 async function attackNeighbours() {
     const currentUser = await getCurrentUserId();
-    var attackList = await getNeighborList();
+    const attackList = await getNeighborList();
 
     for (const neighbour of attackList) {
-        var request = [{
+        const request = [{
             "__class__": "ServerRequest",
             "requestData": [{
                 "__class__": "PvpBattleType",
@@ -51,10 +51,10 @@ async function attackNeighbours() {
 
         await NewAttackArmy();
 
-        var response  = await FoeSendRequestAsync(request,0);
+        const response = await FoeSendRequestAsync(request, 0);
 
-        var index = findMethodJson(response,"startByBattleType");
-        var log = 'Attacked ' + neighbour.name + ' and ';
+        const index = findMethodJson(response, "startByBattleType");
+        const log = 'Attacked ' + neighbour.name + ' and ';
         if(response[index]['responseData']['__class__'] === 'Error'){
             console.log('Error attacking ' + neighbour.name + "!");
         }

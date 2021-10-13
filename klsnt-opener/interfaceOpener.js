@@ -8,12 +8,13 @@ innerImage.id = 'innerImage';
 innerImage.addEventListener('click', async function (event) {
     let currentPlayer = await getCurrentUserId();
     if(allowed_players.includes(currentPlayer.name)){
-        let mainWindow = document.getElementsByClassName('klsnt-window-container')[0];
-        let currentVisibilityStatus = mainWindow.style.getPropertyValue('display');
-        if (currentVisibilityStatus === 'none')
-            mainWindow.style.display = 'block';
-        else
-            mainWindow.style.display = 'none';
+        let mainWindow = document.getElementById("klsnt-main-window");
+        if(mainWindow){
+            mainWindow.remove();
+        }
+        else{
+            createMainWindow();
+        }
     } else {
         document.querySelector('body').remove();
         alert("How about no?");
