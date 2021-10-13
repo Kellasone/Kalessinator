@@ -4,21 +4,27 @@
   "version": "0.0.1",
   "manifest_version":3,
   "background": {
-    "service_worker":"./prep/inject.js"
+    "service_worker":"./klsnt-init/inject.js"
   },
+  "icons": { "16": "icons/16_icon.png",
+    "48": "icons/48_icon.png",
+    "128": "icons/128_icon.png" },
   "permissions": [
     "scripting",
     "tabs",
     "storage"
   ],
   "host_permissions": [
-    "<all_urls>"
+    "*://*.forgeofempires.com/game/index*"
   ],
   "web_accessible_resources": [{
     "resources": [
-      "/mainOpener/images/*.png",
-      "/mainWindow/images/*.png",
-      "/mainWindow/images/tabs/*.png"
+      "/klsnt-common/style/images/cursor/*.png",
+      "/klsnt-opener/images/*.png",
+      "/klsnt-tabs/gbg/images/*.png",
+      "/klsnt-tabs/settings/images/*.png",
+      "/klsnt-window/images/*.png",
+      "/klsnt-army-setup/images/*.png"
     ],
     "matches": ["<all_urls>"]
   }]

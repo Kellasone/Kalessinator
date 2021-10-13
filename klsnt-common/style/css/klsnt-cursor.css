@@ -1,0 +1,11 @@
+.klsnt-drag-cursor {
+    cursor: url("chrome-extension://__MSG_@@extension_id__/klsnt-common/style/images/cursor/cursor_drag.png"), auto;
+}
+
+.klsnt-hover-cursor {
+    cursor: url("chrome-extension://__MSG_@@extension_id__/klsnt-common/style/images/cursor/cursor_hover.png"), auto;
+}
+
+.klsnt-default-cursor {
+    cursor: url("chrome-extension://__MSG_@@extension_id__/klsnt-common/style/images/cursor/cursor.png"), auto;
+}

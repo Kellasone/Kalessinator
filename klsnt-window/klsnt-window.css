@@ -1,0 +1,115 @@
+.klsnt-window-container {
+    position: fixed;
+    background: url("chrome-extension://__MSG_@@extension_id__/klsnt-window/images/window-background.png") top left repeat;
+    border-image-source: url("chrome-extension://__MSG_@@extension_id__/klsnt-window/images/border.png");
+    border-image-slice: 45 18 16 18;
+    border-style: solid;
+    border-width: 45px 18px 16px 18px;
+    top: 50%;
+    left: 50%;
+    z-index: 1000;
+    border-radius: 20px;
+    /*width: 400px;*/
+    /*height: 500px;*/
+    z-index: 1000;
+    color: rgb(246,212,164);
+}
+
+.klsnt-window-header {
+    margin-top: -31px;
+    font-size: 19px;
+    user-select: none;
+}
+
+.klsnt-close-button {
+    background-image: url("chrome-extension://__MSG_@@extension_id__/klsnt-window/images/window-sprite.png");
+    background-position: -122px 0px ;
+    height: 18px;
+    width: 18px;
+    z-index: 1000;
+    margin-top: 2px;
+    margin-right: -2px;
+    float: right;
+    cursor: url("chrome-extension://__MSG_@@extension_id__/klsnt-common/style/images/cursor/cursor_hover.png"), auto;
+}
+
+.klsnt-close-button:hover {
+    background-position: -122px -18px;
+}
+
+.klsnt-close-button:active {
+    background-position: -122px -36px;
+}
+
+.klsnt-window-body {
+    width: 400px;
+    height: 498px;
+    margin-top: 10px;
+}
+
+.klsnt-tabs {
+    width: 400px;
+    height: 34px;
+}
+
+
+.klsnt-tab{
+    width: 42px;
+    height: 34px;
+    background-image: url("chrome-extension://__MSG_@@extension_id__/klsnt-window/images/window-sprite.png");
+    background-position: -142px 0px;
+    float: left;
+    margin-right: 2px;
+}
+
+.klsnt-tab:hover{
+    width: 42px;
+    height: 32px;
+    background-image: url("chrome-extension://__MSG_@@extension_id__/klsnt-window/images/window-sprite.png");
+    background-position: -142px -68px;
+    cursor: url("chrome-extension://__MSG_@@extension_id__/klsnt-common/style/images/cursor/cursor_hover.png"), auto;
+
+}
+
+.klsnt-tab-selected{
+    width: 42px;
+    height: 34px;
+    background-image: url("chrome-extension://__MSG_@@extension_id__/klsnt-window/images/window-sprite.png");
+    background-position: -142px -34px;
+    float: left;
+}
+
+.klsnt-tab-content{
+    padding-top: 4px;
+    width: 400px;
+    height: 464px;
+    position: absolute;
+}
+
+.klsnt-tab span, .klsnt-tab-selected span {
+    z-index: 1000;
+    margin-left: -2px;
+    margin-top: 2px;
+    min-width: 34px;
+    min-height: 34px;
+    display: inline-block;
+    pointer-events: none;
+}
+
+.klsnt-button {
+    background: linear-gradient(to bottom, rgb(183,112,55) 0%,rgb(176,96,38) 1%,rgb(145,72,30) 30%,rgb(130,62,24) 99%,rgb(176,104,50) 100%);
+    border: black 1px solid;
+    border-radius: 2px;
+    height: 21px;
+    width: fit-content;
+    padding: 0px 5px;
+    user-select: none;
+}
+
+.klsnt-button:hover {
+    background: linear-gradient(to bottom, rgb(245, 205, 72) 0%,rgb(223, 154, 52) 1%,rgb(186, 99, 32) 30%,rgb(146, 71, 21) 99%,rgb(163, 93, 40) 100%);
+}
+
+.klsnt-button:active {
+    background: linear-gradient(to bottom, rgb(121, 19, 38) 0%,rgb(129, 38, 24) 1%,rgb(104, 45, 28) 30%,rgb(114, 53, 27) 99%,rgb(189, 115, 60) 100%);
+}
