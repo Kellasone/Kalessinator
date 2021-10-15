@@ -1,0 +1,261 @@
+{
+  "1": {
+    "request": [
+      {
+        "__class__": "ServerRequest",
+        "requestData": [
+          21
+        ],
+        "requestClass": "GuildBattlegroundService",
+        "requestMethod": "startNegotiation",
+        "requestId": 265
+      }
+    ],
+    "response": {
+      "responseData": {
+        "context": "guildBattleground",
+        "possibleCosts": {
+          "resources": {
+            "nanowire": 1,
+            "ai_data": 1,
+            "algae": 1,
+            "biogeochemical_data": 1
+          },
+          "__class__": "Resources"
+        },
+        "__class__": "NegotiationGame"
+      },
+      "requestClass": "GuildBattlegroundService",
+      "requestMethod": "startNegotiation",
+      "requestId": 265,
+      "__class__": "ServerResponse"
+    }
+  },
+  "2": {
+    "request": [
+      {
+        "__class__": "ServerRequest",
+        "requestData": [
+          [
+            {
+              "__class__": "NegotiationGameSlot",
+              "slotId": 0,
+              "resourceId": "algae"
+            },
+            {
+              "__class__": "NegotiationGameSlot",
+              "slotId": 1,
+              "resourceId": "biogeochemical_data"
+            },
+            {
+              "__class__": "NegotiationGameSlot",
+              "slotId": 2,
+              "resourceId": "ai_data"
+            },
+            {
+              "__class__": "NegotiationGameSlot",
+              "slotId": 3,
+              "resourceId": "nanowire"
+            },
+            {
+              "__class__": "NegotiationGameSlot",
+              "slotId": 4,
+              "resourceId": "biogeochemical_data"
+            }
+          ],
+          1
+        ],
+        "requestClass": "NegotiationGameService",
+        "requestMethod": "submitTurn",
+        "requestId": 268
+      }
+    ],
+    "response": [
+      {
+        "responseData": {
+          "state": "ongoing",
+          "turnResult": {
+            "slots": [
+              {
+                "resourceId": "algae",
+                "state": "wrong_person",
+                "__class__": "NegotiationGameSlotResult"
+              },
+              {
+                "slotId": 1,
+                "resourceId": "biogeochemical_data",
+                "state": "not_needed",
+                "__class__": "NegotiationGameSlotResult"
+              },
+              {
+                "slotId": 2,
+                "resourceId": "ai_data",
+                "state": "wrong_person",
+                "__class__": "NegotiationGameSlotResult"
+              },
+              {
+                "slotId": 3,
+                "resourceId": "nanowire",
+                "state": "wrong_person",
+                "__class__": "NegotiationGameSlotResult"
+              },
+              {
+                "slotId": 4,
+                "resourceId": "biogeochemical_data",
+                "state": "not_needed",
+                "__class__": "NegotiationGameSlotResult"
+              }
+            ],
+            "__class__": "NegotiationGameTurnResult"
+          },
+          "__class__": "NegotiationGameResult"
+        },
+        "requestClass": "NegotiationGameService",
+        "requestMethod": "submitTurn",
+        "requestId": 268,
+        "__class__": "ServerResponse"
+      }
+    ]
+  },
+  "3": {
+    "request": [
+      {
+        "__class__": "ServerRequest",
+        "requestData": [
+          [
+            {
+              "__class__": "NegotiationGameSlot",
+              "slotId": 0,
+              "resourceId": "ai_data"
+            },
+            {
+              "__class__": "NegotiationGameSlot",
+              "slotId": 1,
+              "resourceId": "algae"
+            },
+            {
+              "__class__": "NegotiationGameSlot",
+              "slotId": 2,
+              "resourceId": "algae"
+            },
+            {
+              "__class__": "NegotiationGameSlot",
+              "slotId": 3,
+              "resourceId": "algae"
+            },
+            {
+              "__class__": "NegotiationGameSlot",
+              "slotId": 4,
+              "resourceId": "ai_data"
+            }
+          ],
+          2
+        ],
+        "requestClass": "NegotiationGameService",
+        "requestMethod": "submitTurn",
+        "requestId": 269
+      }
+    ],
+    "response": [
+      {
+        "responseData": {
+          "state": "ongoing",
+          "turnResult": {
+            "slots": [
+              {
+                "resourceId": "ai_data",
+                "state": "correct",
+                "__class__": "NegotiationGameSlotResult"
+              },
+              {
+                "slotId": 1,
+                "resourceId": "algae",
+                "state": "wrong_person",
+                "__class__": "NegotiationGameSlotResult"
+              },
+              {
+                "slotId": 2,
+                "resourceId": "algae",
+                "state": "correct",
+                "__class__": "NegotiationGameSlotResult"
+              },
+              {
+                "slotId": 3,
+                "resourceId": "algae",
+                "state": "correct",
+                "__class__": "NegotiationGameSlotResult"
+              },
+              {
+                "slotId": 4,
+                "resourceId": "ai_data",
+                "state": "not_needed",
+                "__class__": "NegotiationGameSlotResult"
+              }
+            ],
+            "__class__": "NegotiationGameTurnResult"
+          },
+          "__class__": "NegotiationGameResult"
+        },
+        "requestClass": "NegotiationGameService",
+        "requestMethod": "submitTurn",
+        "requestId": 269,
+        "__class__": "ServerResponse"
+      }
+    ]
+  },
+  "4": {
+    "request": [
+      {
+        "__class__": "ServerRequest",
+        "requestData": [
+          [
+            {
+              "__class__": "NegotiationGameSlot",
+              "slotId": 1,
+              "resourceId": "nanowire"
+            },
+            {
+              "__class__": "NegotiationGameSlot",
+              "slotId": 4,
+              "resourceId": "algae"
+            }
+          ],
+          3
+        ],
+        "requestClass": "NegotiationGameService",
+        "requestMethod": "submitTurn",
+        "requestId": 270
+      }
+    ],
+    "response": [
+      {
+        "responseData": {
+          "state": "won",
+          "turnResult": {
+            "slots": [
+              {
+                "slotId": 1,
+                "resourceId": "nanowire",
+                "state": "correct",
+                "__class__": "NegotiationGameSlotResult"
+              },
+              {
+                "slotId": 4,
+                "resourceId": "algae",
+                "state": "correct",
+                "__class__": "NegotiationGameSlotResult"
+              }
+            ],
+            "__class__": "NegotiationGameTurnResult"
+          },
+          "__class__": "NegotiationGameResult"
+        },
+        "requestClass": "NegotiationGameService",
+        "requestMethod": "submitTurn",
+        "requestId": 270,
+        "__class__": "ServerResponse"
+      }
+    ]
+  }
+}
+
