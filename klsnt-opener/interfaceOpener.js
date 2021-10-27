@@ -1,5 +1,5 @@
 const wrapper = document.createElement('div');
-wrapper.id = 'wrapper';
+wrapper.id = 'klsnt-wrapper';
 wrapper.classList.add('game-cursor');
 
 const innerImage = document.createElement('div');

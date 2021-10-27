@@ -1,4 +1,4 @@
-#wrapper{
+#klsnt-wrapper{
     width:225px;
     height:50px;
     background-image: url("chrome-extension://__MSG_@@extension_id__/klsnt-opener/images/openerBackground.png");
@@ -11,7 +11,7 @@
     child-align: middle;
 }
 
-#wrapper:hover {
+#klsnt-wrapper:hover {
     filter: brightness(150%);
 }
 
