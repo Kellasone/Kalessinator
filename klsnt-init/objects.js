@@ -11,7 +11,9 @@ const kalessinator_tabs = ['gbg','settings'];
 const allowed_players = [
     'Mereu B Niciodata M',
     'kalessia',
-    'badr bds'
+    'badr bds',
+    'BADR J7',
+    'Ragnar2022'
 ];
 
 const troops = {
