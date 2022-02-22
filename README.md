@@ -8,4 +8,4 @@ Nothing yet.
 Extension made for personal use (non-commercial use). Cloning, forking and usage prohibited. 
 For collaboration feel free to contact me.  
 
-Discontinued, no longer working on this after November INNO Games ban wave.
+Discontinued, no longer working on this after November 2021 INNO Games ban wave.
